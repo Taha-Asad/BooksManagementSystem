@@ -1,11 +1,11 @@
-# 📚 Books Management System (BMS)
+# Books Management System (BMS)
 
 > **Academic Coursework & Software Engineering Lab Submission**  
 > A high-performance, web-based catalog and inventory management application built with **ASP.NET Core Razor Pages**, **ADO.NET (`Microsoft.Data.SqlClient`)**, and **Microsoft SQL Server**.
 
 ---
 
-## 🎓 Academic Submission Metadata
+## Academic Submission Metadata
 
 | Field | Details |
 | :--- | :--- |
@@ -21,7 +21,7 @@
 
 ---
 
-## 📌 Executive Summary & Problem Statement
+## Executive Summary & Problem Statement
 
 ### Problem Context
 Traditional physical book depositories, academic departmental libraries, and bookstores frequently face challenges with manual record keeping:
@@ -34,7 +34,7 @@ The **Books Management System (BMS)** provides an accessible, robust web portal 
 
 ---
 
-## 🏛️ System Architecture & Data Flow
+## System Architecture & Data Flow
 
 ### Architectural Pattern: Razor Pages PageModel + ADO.NET
 The application employs the **ASP.NET Core Razor Pages** architecture. Each UI view (`.cshtml`) is paired with an isolated code-behind (`.cshtml.cs`) acting as an autonomous controller/model handler. Data access is executed directly using secure, low-latency ADO.NET commands.
@@ -55,7 +55,7 @@ flowchart TD
 
 ---
 
-## 🗄️ Database Design & SQL Schema
+## Database Design & SQL Schema
 
 The database persistence layer is hosted in **Microsoft SQL Server LocalDB** under database `BMS_DB`.
 
@@ -115,17 +115,17 @@ GO
 ### Data Dictionary
 | Column Name | SQL Type | Nullable | Identity / Key | Description |
 | :--- | :--- | :---: | :---: | :--- |
-| `Id` | `INT` | ❌ No | **PK (1,1)** | Unique surrogate key generated sequentially. |
-| `title` | `NVARCHAR(50)` | ✔️ Yes | — | Book title / publication name. |
-| `author` | `NVARCHAR(50)` | ✔️ Yes | — | Primary author name. |
-| `description` | `NVARCHAR(50)` | ✔️ Yes | — | Synopsis or notes. |
-| `publisher` | `NVARCHAR(50)` | ✔️ Yes | — | Publishing house / organization. |
-| `status` | `NVARCHAR(50)` | ✔️ Yes | — | Availability status (e.g., *Available*, *Borrowed*). |
-| `category` | `NVARCHAR(50)` | ✔️ Yes | — | Genre classification (e.g., *Technology*, *Fiction*). |
+| `Id` | `INT` | No | **PK (1,1)** | Unique surrogate key generated sequentially. |
+| `title` | `NVARCHAR(50)` | Yes | — | Book title / publication name. |
+| `author` | `NVARCHAR(50)` | Yes | — | Primary author name. |
+| `description` | `NVARCHAR(50)` | Yes | — | Synopsis or notes. |
+| `publisher` | `NVARCHAR(50)` | Yes | — | Publishing house / organization. |
+| `status` | `NVARCHAR(50)` | Yes | — | Availability status (e.g., *Available*, *Borrowed*). |
+| `category` | `NVARCHAR(50)` | Yes | — | Genre classification (e.g., *Technology*, *Fiction*). |
 
 ---
 
-## ⚡ Core Functional Modules
+## Core Functional Modules
 
 ### 1. Catalog Dashboard (`Pages/Books/Index.cshtml`)
 * Queries `SELECT * FROM dbo.books ORDER BY Id DESC`.
@@ -149,7 +149,7 @@ GO
 
 ---
 
-## 🛡️ Security & Reliability Architecture
+## Security & Reliability Architecture
 
 1. **SQL Injection Defense via Parameterization**:
    All database interactions utilize parameterized `SqlCommand` queries. Raw user strings are never concatenated directly into SQL text:
@@ -166,7 +166,7 @@ GO
 
 ---
 
-## 🛠️ Technology Stack & Dependencies
+## Technology Stack & Dependencies
 
 * **Platform / Framework**: ASP.NET Core (`net10.0`)
 * **Language**: C# 13
@@ -177,7 +177,7 @@ GO
 
 ---
 
-## 🚀 Setup & Execution Guide
+## Setup & Execution Guide
 
 ### Prerequisites
 * [.NET SDK](https://dotnet.microsoft.com/download) (Version 8.0, 9.0, or 10.0 preview) installed.
@@ -231,7 +231,7 @@ Open your browser and navigate to the displayed listening URL (typically `https:
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```text
 BooksManagementSystem/
@@ -266,7 +266,7 @@ BooksManagementSystem/
 
 ---
 
-## 🧪 Verification & Test Scenarios
+## Verification & Test Scenarios
 
 | Test ID | Test Scenario | Input Data | Expected Behavior | Verification Status |
 | :---: | :--- | :--- | :--- | :---: |
@@ -279,7 +279,7 @@ BooksManagementSystem/
 
 ---
 
-## 📜 Academic Integrity Statement & Acknowledgments
+## Academic Integrity Statement & Acknowledgments
 
 This software was designed and implemented by **Taha Asadullah** for academic evaluation. The implementation demonstrates proficiency in ASP.NET Core web architecture, secure database access using ADO.NET, and adherence to software engineering best practices.
 
